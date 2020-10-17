@@ -15,9 +15,11 @@ Once you have downloaded Geth & Tools it should show a zipped file you will need
 Once GitBash is open navigate to your newly created folder, For our purposes we re-named the folder Blockchain-Tools and pasted it into our Downloads folder so in GitBash I run the following command:
 
 cd Downloads
+
 cd Blockchain-Tools
 
-Once here I run the following commandL
+Once here I run the following command
+
 ./geth account new --datadir node1
 
 This will generate an account we need in order to complete the mining on our network and in fact we will be creating two accounts with this one being the first.
@@ -25,6 +27,7 @@ This will generate an account we need in order to complete the mining on our net
 The account will generate and it will ask for a password. The password we used is testner0123. It doesn't have to be anything long and complicated and you will want to write it down or store it someplace that you can easily find. It will ask you to re-type the password it will generate a public address key and a path of the secret key file. Copy and store both of these in a safe place. It is okay to share the public address, but keep the secret key safe and don't share it with anyone.
 
 Now we will run this command:
+
 ./geth account new --datadir node2
 
 Like before it will ask for a password, you can use the same password as before or a different one if you wish. Once you have entered and re-entered a password a public address and secret key file will be generated. Copy paste both of these and store them in a safe place. I recommend using a text editor such as Notepad++ to store your information.
@@ -60,6 +63,7 @@ Now that our network has been created you can either enter the Ctrl + C command 
 ./geth init "name of json file" --datadir node1
 
 For our purposes it would look like this:
+
 ./geth init auriel.json --datadir node1
 
 The name of the json file can be found by opening up a file explore and navigating to the Blockchain-Tools folder.
@@ -76,12 +80,14 @@ You can again either run the following command in a new GitBash window, navigati
 
 ./geth --datadir node1 --unlock "paste address 1 here" --mine --rpc --allow-insecure-unlock
 
-Should look something like this
+Should look something like this:
+
 ./geth --datadir node1 --unlock "0x61AbAa7955ffd11aac8f8dE54F51531E4B42fAfD" --mine --rpc --allow-insecure-unlock
 
 Once this command is executed it will run and ask for the password. Enter the password you created earlier.
 
 Example:
+
 testnet0123
 
 It should then start mining and creating blocks. It will also create an enode. We need to copy this for node2.
@@ -95,9 +101,10 @@ Now for this next part you will need to open a new GitBash window and navigate t
 ./geth --datadir node2 --unlock "paste address 2 here" --mine --port 30304 --bootnodes "paste your enode here" --ipcdisable
 
 It should similar to this:
+
 ./geth --datadir node2 --unlock "0x3072c6Afd0d847ACF4440E11a2206f8003aaCde9" --mine --port 30304 --bootnodes enode://2c1d2c8fdab786c72fb1ed3d45e30722c41aa15f7d3a3be4a38eba99bbe32162b0515fbf23b1161cf3b774e3749ae86cae0d5096858756ba82f38d4f3b44a8c0@127.0.0.1:30303 --ipcdisable
 
-We set the port to 30304 because the rpc flag on node1 is set to port 8545 and the two nodes cannot be using the same port. Also, without the --ipcdisable at the end the code will show an error access is denied for node2 which will nto enable the two nodes to communicate with each other.
+We set the port to 30304 because the rpc flag on node1 is set to port 8545 and the two nodes cannot be using the same port. Also, without the --ipcdisable at the end the code will show an error access is denied for node2 which will not enable the two nodes to communicate with each other.
 
 ## Creating Custom Network & Sending Test Transaction on MyCrypto
 
@@ -110,6 +117,7 @@ From here at the bottom right, again in somewhat tiny letters we will click Add 
 First we want to click on the dropdown box underneath Network and change from ETH to Custom, which is at the very bottom of the list. For Node Name and Network Name we are going to enter the name of our netwrok in both spots.
 
 For example:
+
 Auriel
 
 For Currency we are going to select ETH and for ChainID we are going to enter the ChainId we entered when creating our netwrok. 
@@ -125,6 +133,7 @@ Once our Custom Node has been created we will click on Keystore file. This will 
 We will then need to enter our password we created earlier.
 
 Example:
+
 testnet0123
 
 This should open our first address we created that has been mining and we should a whole lot of "ETH" in our account. Now select Send Ether & Tokens, either fro mthe top or the top drop down box. We can paste our second address into the ToAddress field enter in 1 ETH and click Send Transaction.
