@@ -56,6 +56,10 @@ After we enter our Chain Id, it will again give us 4 options. We will select opt
 
 You can reference the following two screenshots to see if you did it correctly.
 
+![Screenshot1](https://github.com/MatrimCauthon88/Blockchain_Simulation/blob/main/Screenshots/Screenshot1P.PNG)
+
+![Screenshot2](https://github.com/MatrimCauthon88/Blockchain_Simulation/blob/main/Screenshots/Screenshot2P.PNG)
+
 ## Initiating JSON and Start Mining
 
 Now that our network has been created you can either enter the Ctrl + C command to exit puppeth, or if you are like me and want to reference back to things, you can open a new GitBash window and navigate again to the Blockchain-Tools folder. Either way we will now want to run the following command.
@@ -139,6 +143,8 @@ testnet0123
 This should open our first address we created that has been mining and we should a whole lot of "ETH" in our account. Now select Send Ether & Tokens, either fro mthe top or the top drop down box. We can paste our second address into the ToAddress field enter in 1 ETH and click Send Transaction.
 
 If successful a green pop-up box should appear saying, "Your TX has been broadcast to the network...."
+
+![Screenshot3](https://github.com/MatrimCauthon88/Blockchain_Simulation/blob/main/Screenshots/Successful_Transaction_P.PNG)
 
 And that is how you can create your own private Blockchain Network.
 
